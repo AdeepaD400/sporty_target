@@ -73,7 +73,7 @@ export function SportsPanel({
         </span>
       </div>
 
-      <form onSubmit={handleAdd} className="mb-4 flex gap-2">
+      <form onSubmit={handleAdd} className="mb-4 flex min-w-0 gap-2">
         <input
           type="text"
           value={newName}
@@ -83,11 +83,11 @@ export function SportsPanel({
           }}
           placeholder="Add a sport..."
           maxLength={30}
-          className="flex-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+          className="min-w-0 flex-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
         />
         <button
           type="submit"
-          className="rounded-lg bg-teal-600 px-3 py-2 text-sm font-medium text-white transition hover:bg-teal-700"
+          className="shrink-0 rounded-lg bg-teal-600 px-3 py-2 text-sm font-medium text-white transition hover:bg-teal-700"
         >
           Add
         </button>
@@ -112,13 +112,13 @@ export function SportsPanel({
             />
 
             {editingId === sport.id ? (
-              <div className="flex flex-1 gap-1">
+              <div className="flex min-w-0 flex-1 gap-1">
                 <input
                   type="text"
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
                   maxLength={30}
-                  className="flex-1 rounded border border-zinc-200 bg-white px-2 py-1 text-sm outline-none focus:border-teal-500 dark:border-zinc-600 dark:bg-zinc-900"
+                  className="min-w-0 flex-1 rounded border border-zinc-200 bg-white px-2 py-1 text-sm outline-none focus:border-teal-500 dark:border-zinc-600 dark:bg-zinc-900"
                   autoFocus
                   onKeyDown={(e) => {
                     if (e.key === "Enter") handleUpdate(sport.id);
@@ -128,7 +128,7 @@ export function SportsPanel({
                 <button
                   type="button"
                   onClick={() => handleUpdate(sport.id)}
-                  className="rounded px-2 text-xs font-medium text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/30"
+                  className="shrink-0 rounded px-2 text-xs font-medium text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-900/30"
                 >
                   Save
                 </button>
